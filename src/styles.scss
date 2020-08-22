@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'variables.scss';
+
+h1 {
+  color: map-get($color, title);
+  font-family: map-get($font, heading), map-get($font, fheading), sans-serif;
+  font-size: 250%;
+}
+h2, h3 {
+  color: map-get($color, subtitle);
+  font-family: map-get($font, heading), map-get($font, fheading), sans-serif;
+  font-weight: lighter;
+}
+body {
+  margin: 2em;
+}
+body, input[type="text"], button {
+  color: map-get($color, theme);
+  font-family: map-get($font, body), map-get($font, fbody);
+}
+* {
+  font-family: map-get($font, heading), map-get($font, fheading), sans-serif;
+}

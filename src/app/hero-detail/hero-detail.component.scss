@@ -1,0 +1,31 @@
+@import 'variables.scss';
+
+label {
+  display: inline-block;
+  width: 3em;
+  margin: .5em 0;
+  color: map-get($color, hero-hover);
+  font-weight: bold;
+}
+input {
+  height: 2em;
+  font-size: 1em;
+  padding-left: .4em;
+}
+button {
+  margin-top: 20px;
+  font-family: map-get($font, heading);
+  background-color: map-get($color, bg-hero);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  &:hover {
+    background-color: map-get($color, bg-hero-select);
+  }
+  &:disabled {
+    background-color: map-get($color, bg-hero);
+    color: map-get($color, hero-btn-disabled);
+    cursor: auto;
+  }
+}
