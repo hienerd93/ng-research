@@ -19,13 +19,15 @@
       background-color: map-get($color, bg-hero-hover);
       left: .1em;
     }
-    &.selected {
-      background-color: map-get($color, bg-hero-select);
-      color: map-get($color, hero);
-      &:hover {
-        background-color: map-get($color, bg-hero-select-hover);
-        color: map-get($color, hero);
-      }
+  }
+  a {
+    color: map-get($color, theme);
+    text-decoration: none;
+    position: relative;
+    display: block;
+    width: 250px;
+    &:hover {
+      color: map-get($color, hero-hover);
     }
   }
   .badge {
