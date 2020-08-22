@@ -1,0 +1,35 @@
+@import 'variables.scss';
+
+h2 {
+  color: map-get($color, title-mess);
+  font-family: map-get($font, heading), map-get($font, fheading), sans-serif;
+  font-weight: lighter;
+}
+body {
+  margin: 2em;
+}
+body, input[text], button {
+  color: map-get($color, theme-mess);
+  font-family: map-get($font, body), map-get($font, fbody);
+}
+button {
+  &.clear {
+    font-family: map-get($font, heading);
+    color: map-get($color, theme);
+    background-color: map-get($color, bg-hero);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    cursor: hand;
+    margin-bottom: 12px;
+  }
+  &:hover {
+    background-color: map-get($color, bg-hero-select);
+  }
+  &:disabled {
+    background-color: map-get($color, bg-hero);
+    color: map-get($color, btn-disable);
+    cursor: auto;
+  }
+}
