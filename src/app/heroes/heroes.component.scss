@@ -33,7 +33,7 @@
   .badge {
     display: inline-block;
     font-size: small;
-    color: white;
+    color: map-get($color, hero);
     padding: 0.8em 0.7em 0 0.7em;
     background-color: map-get($color, hero-badge);
     line-height: 1em;
@@ -43,5 +43,24 @@
     height: 1.8em;
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
+  }
+}
+button {
+  background-color: map-get($color, bg-hero);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+  font-family: map-get($font, heading);
+  &:hover {
+    background-color: map-get($color, btn-hover);
+  }
+  &.delete {
+    position: relative;
+    left: 194px;
+    top: -32px;
+    background-color: map-get($color, bg-btn-del) !important;
+    color: map-get($color, hero);
   }
 }
