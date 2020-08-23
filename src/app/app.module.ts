@@ -10,10 +10,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MessagesComponent } from './messages/messages.component';
 import { HeroesModule } from './heroes/heroes.module';
-import { CrisisCenterModule } from './crisis-center/crisis-center.module';
-import { AdminModule } from './admin/admin.module';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
-import { LoginComponent } from './auth/login/login.component';
+import { AuthModule } from './auth/auth.module';
+import { Router } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -21,7 +20,6 @@ import { LoginComponent } from './auth/login/login.component';
     MessagesComponent,
     PageNotFoundComponent,
     ComposeMessageComponent,
-    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,12 +29,18 @@ import { LoginComponent } from './auth/login/login.component';
       dataEncapsulation: false,
     }),
     HeroesModule,
-    CrisisCenterModule,
-    AdminModule,
+    AuthModule,
     BrowserAnimationsModule,
     AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(router: Router) {
+    // Use a custom replacer to display function names in the route configs
+    const replacer = (key, value) => (typeof value === 'function') ? value.name : value;
+
+    console.log('Routes: ', JSON.stringify(router.config, replacer, 2));
+  }
+}
