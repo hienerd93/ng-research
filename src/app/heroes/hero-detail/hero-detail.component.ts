@@ -41,4 +41,8 @@ export class HeroDetailComponent implements OnInit {
     const heroId = hero ? hero.id : null;
     this.router.navigate(['/superheroes', { id: heroId, foo: 'foo' }]);
   }
+
+  goBack(): void {
+    this.location.back();
+  }
 }
