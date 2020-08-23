@@ -4,34 +4,36 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeroesComponent } from './heroes/heroes.component';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import { MessagesComponent } from './messages/messages.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
-import { HeroSearchComponent } from './hero-search/hero-search.component';
-import { CrisisListComponent } from './crisis-list/crisis-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { MessagesComponent } from './messages/messages.component';
+import { HeroesModule } from './heroes/heroes.module';
+import { CrisisCenterModule } from './crisis-center/crisis-center.module';
+import { AdminModule } from './admin/admin.module';
+import { ComposeMessageComponent } from './compose-message/compose-message.component';
+import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeroesComponent,
-    HeroDetailComponent,
     MessagesComponent,
-    DashboardComponent,
-    HeroSearchComponent,
-    CrisisListComponent,
     PageNotFoundComponent,
+    ComposeMessageComponent,
+    LoginComponent,
   ],
   imports: [
+    BrowserModule,
     FormsModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false,
     }),
-    BrowserModule,
+    HeroesModule,
+    CrisisCenterModule,
+    AdminModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
   ],
   providers: [],
