@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import {
-  CanActivate, Router,
+  CanActivate,
+  Router,
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
   CanActivateChild,
   NavigationExtras,
-  CanLoad, Route
+  CanLoad,
+  Route,
 } from '@angular/router';
 import { AuthService } from './auth.service';
 
@@ -15,13 +17,19 @@ import { AuthService } from './auth.service';
 export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
   constructor(private authService: AuthService, private router: Router) {}
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): boolean {
     const url: string = state.url;
 
     return this.checkLogin(url);
   }
 
-  canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+  canActivateChild(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): boolean {
     return this.canActivate(route, state);
   }
 
@@ -32,7 +40,9 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
   }
 
   checkLogin(url: string): boolean {
-    if (this.authService.isLoggedIn) { return true; }
+    if (this.authService.isLoggedIn) {
+      return true;
+    }
 
     // Store the attempted URL for redirecting
     this.authService.redirectUrl = url;
@@ -44,7 +54,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
     // that contains our global query params and fragment
     const navigationExtras: NavigationExtras = {
       queryParams: { session_id: sessionId },
-      fragment: 'anchor'
+      fragment: 'anchor',
     };
 
     // Navigate to the login page with extras

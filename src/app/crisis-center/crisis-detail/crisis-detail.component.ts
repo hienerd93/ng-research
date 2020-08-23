@@ -13,7 +13,11 @@ export class CrisisDetailComponent implements OnInit {
   crisis: Crisis;
   editName: string;
 
-  constructor(private route: ActivatedRoute, private router: Router, private dialogService: DialogService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private dialogService: DialogService
+  ) {}
 
   ngOnInit() {
     this.route.data.subscribe((data: { crisis: Crisis }) => {

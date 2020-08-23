@@ -11,15 +11,19 @@ import { CRISES } from '../assets/mock/mock-crises';
 })
 export class CrisisService {
   static nextCrisisId = 100;
-  private crises$: BehaviorSubject<Crisis[]> = new BehaviorSubject<Crisis[]>(CRISES);
+  private crises$: BehaviorSubject<Crisis[]> = new BehaviorSubject<Crisis[]>(
+    CRISES
+  );
 
-  constructor(private messageService: MessageService) { }
+  constructor(private messageService: MessageService) {}
 
-  getCrises() { return this.crises$; }
+  getCrises() {
+    return this.crises$;
+  }
 
   getCrisis(id: number | string) {
     return this.getCrises().pipe(
-      map(crises => crises.find(crisis => crisis.id === +id))
+      map((crises) => crises.find((crisis) => crisis.id === +id))
     );
   }
 }

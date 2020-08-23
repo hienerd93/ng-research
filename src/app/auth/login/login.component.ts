@@ -28,7 +28,7 @@ export class LoginComponent {
 
         const navigationExtras: NavigationExtras = {
           queryParamsHandling: 'preserve',
-          preserveFragment: true
+          preserveFragment: true,
         };
 
         // Redirect the user

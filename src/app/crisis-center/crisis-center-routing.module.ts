@@ -21,8 +21,8 @@ const routes: Routes = [
             component: CrisisDetailComponent,
             canDeactivate: [CanDeactivateGuard],
             resolve: {
-              crisis: CrisisDetailResolverService
-            }
+              crisis: CrisisDetailResolverService,
+            },
           },
           {
             path: '',
