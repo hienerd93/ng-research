@@ -1,4 +1,4 @@
-@import 'variables.scss';
+@import "variables.scss";
 
 .heroes {
   margin: 0 0 2em 0;
@@ -10,14 +10,14 @@
     position: relative;
     left: 0;
     background-color: map-get($color, bg-hero);
-    margin: .5em;
-    padding: .3em 0;
+    margin: 0.5em;
+    padding: 0.3em 0;
     height: 1.6em;
     border-radius: 4px;
     &:hover {
       color: map-get($color, hero-hover);
       background-color: map-get($color, bg-hero-hover);
-      left: .1em;
+      left: 0.1em;
     }
   }
   a {
@@ -41,7 +41,7 @@
     left: -1px;
     top: -4px;
     height: 1.8em;
-    margin-right: .8em;
+    margin-right: 0.8em;
     border-radius: 4px 0 0 4px;
   }
 }

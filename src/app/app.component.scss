@@ -1,4 +1,4 @@
-@import 'variables.scss';
+@import "variables.scss";
 
 h1 {
   font-size: 1.2em;
@@ -16,14 +16,15 @@ nav a {
   display: inline-block;
   background-color: map-get($color, bg-hero);
   border-radius: 4px;
-  &:visited, &:link {
+  &:visited,
+  &:link {
     color: map-get($color, nav);
   }
   &:hover {
-    color:map-get($color , nav-a);
+    color: map-get($color, nav-a);
     background-color: map-get($color, bg-hero-select);
   }
   &.active {
-    color:map-get($color , nav-a);
+    color: map-get($color, nav-a);
   }
 }

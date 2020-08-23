@@ -1,16 +1,16 @@
-@import 'variables.scss';
+@import "variables.scss";
 
 label {
   display: inline-block;
   width: 3em;
-  margin: .5em 0;
+  margin: 0.5em 0;
   color: map-get($color, hero-hover);
   font-weight: bold;
 }
 input {
   height: 2em;
   font-size: 1em;
-  padding-left: .4em;
+  padding-left: 0.4em;
 }
 button {
   margin-top: 20px;

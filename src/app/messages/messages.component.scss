@@ -1,4 +1,4 @@
-@import 'variables.scss';
+@import "variables.scss";
 
 h2 {
   color: map-get($color, title-mess);
@@ -8,7 +8,9 @@ h2 {
 body {
   margin: 2em;
 }
-body, input[text], button {
+body,
+input[text],
+button {
   color: map-get($color, theme-mess);
   font-family: map-get($font, body), map-get($font, fbody);
 }
