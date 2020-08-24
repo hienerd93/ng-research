@@ -13,6 +13,8 @@ import { HeroesModule } from './heroes/heroes.module';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
 import { AuthModule } from './auth/auth.module';
 import { Router } from '@angular/router';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { Router } from '@angular/router';
     MessagesComponent,
     PageNotFoundComponent,
     ComposeMessageComponent,
+    DialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,10 +33,16 @@ import { Router } from '@angular/router';
     }),
     HeroesModule,
     AuthModule,
+    MatDialogModule,
     BrowserAnimationsModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: MatDialogRef,
+      useValue: {},
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {

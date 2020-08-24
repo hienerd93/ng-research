@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { DialogComponent } from './dialog/dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 /**
  * Async modal dialog service
@@ -10,6 +12,7 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root',
 })
 export class DialogService {
+  constructor(public dialog: MatDialog) {}
   /**
    * Ask user to confirm an action. `message` explains the action and choices.
    * Returns observable resolving to `true`=confirm or `false`=cancel
@@ -18,5 +21,16 @@ export class DialogService {
     const confirmation = window.confirm(message || 'Is it OK?');
 
     return of(confirmation);
+  }
+
+  confirmMat(): Observable<boolean> {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      data: {
+        title: 'Discard changes?',
+        close: 'Ok',
+      },
+    });
+
+    return dialogRef.afterClosed();
   }
 }
