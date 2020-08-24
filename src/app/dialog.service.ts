@@ -12,7 +12,7 @@ import { MatDialog } from '@angular/material/dialog';
   providedIn: 'root',
 })
 export class DialogService {
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog) {}
   /**
    * Ask user to confirm an action. `message` explains the action and choices.
    * Returns observable resolving to `true`=confirm or `false`=cancel
@@ -27,8 +27,8 @@ export class DialogService {
     const dialogRef = this.dialog.open(DialogComponent, {
       data: {
         title: 'Discard changes?',
-        close: 'Ok'
-      }
+        close: 'Ok',
+      },
     });
 
     return dialogRef.afterClosed();

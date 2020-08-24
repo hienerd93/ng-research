@@ -40,8 +40,8 @@ import { DialogComponent } from './dialog/dialog.component';
   providers: [
     {
       provide: MatDialogRef,
-      useValue: {}
-    }
+      useValue: {},
+    },
   ],
   bootstrap: [AppComponent],
 })
