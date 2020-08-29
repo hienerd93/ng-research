@@ -13,6 +13,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { UniqueAlterEgoValidatorDirective } from './alter-ego.directive';
 import { ForbiddenValidatorDirective } from './forbidden-name.directive';
 import { IdentityRevealedValidatorDirective } from './identity-revealed.directive';
+import { HeroListComponent } from './hero-list/hero-list.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { IdentityRevealedValidatorDirective } from './identity-revealed.directiv
     ManageHeroesComponent,
     FormTemplateComponent,
     FormReactiveComponent,
+    HeroListComponent,
     UniqueAlterEgoValidatorDirective,
     ForbiddenValidatorDirective,
     IdentityRevealedValidatorDirective,

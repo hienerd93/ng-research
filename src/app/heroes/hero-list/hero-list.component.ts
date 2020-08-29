@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { switchMap, map } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-heroes',
+  selector: 'app-hero-list',
   templateUrl: './hero-list.component.html',
   styleUrls: ['./hero-list.component.scss'],
 })
@@ -30,25 +30,5 @@ export class HeroListComponent implements OnInit {
         return this.heroService.getHeroes();
       })
     );
-  }
-
-  add(name: string): void {
-    name = name.trim();
-    if (!name) {
-      return;
-    }
-    this.heroService
-      .addHero({ name } as Hero)
-      .subscribe((_) => this.getHeroes());
-  }
-
-  removeHero(hero: Hero) {
-    this.heroes$ = this.heroes$.pipe(
-      map((heroes) => heroes.filter((h) => h !== hero))
-    );
-  }
-
-  delete(hero: Hero): void {
-    this.heroService.deleteHero(hero).subscribe((_) => this.removeHero(hero));
   }
 }
