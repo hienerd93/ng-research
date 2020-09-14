@@ -14,6 +14,8 @@ import { UniqueAlterEgoValidatorDirective } from './alter-ego.directive';
 import { ForbiddenValidatorDirective } from './forbidden-name.directive';
 import { IdentityRevealedValidatorDirective } from './identity-revealed.directive';
 import { HeroListComponent } from './hero-list/hero-list.component';
+import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { HeroListComponent } from './hero-list/hero-list.component';
     FormTemplateComponent,
     FormReactiveComponent,
     HeroListComponent,
+    HeroDetailComponent,
+    HeroSearchComponent,
     UniqueAlterEgoValidatorDirective,
     ForbiddenValidatorDirective,
     IdentityRevealedValidatorDirective,

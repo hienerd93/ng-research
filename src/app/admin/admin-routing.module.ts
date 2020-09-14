@@ -5,6 +5,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { ManageCrisesComponent } from './manage-crises/manage-crises.component';
 import { ManageHeroesComponent } from './manage-heroes/manage-heroes.component';
 import { AuthGuard } from '../auth/auth.guard';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,7 @@ const routes: Routes = [
           { path: 'crises', component: ManageCrisesComponent },
           { path: 'heroes', component: ManageHeroesComponent },
           { path: '', component: AdminDashboardComponent },
+          { path: 'detail/:id', component: HeroDetailComponent },
         ],
       },
     ],

@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HeroListComponent } from './hero-list/hero-list.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: 'heroes', redirectTo: '/superheroes' },
@@ -18,7 +17,6 @@ const routes: Routes = [
     component: HeroDetailComponent,
     data: { animation: 'hero' },
   },
-  { path: 'dashboard', component: DashboardComponent },
 ];
 
 @NgModule({

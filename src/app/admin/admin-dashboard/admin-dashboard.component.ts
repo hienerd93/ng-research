@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Hero } from 'src/app/hero';
+import { HeroService } from 'src/app/hero.service';
 
 import { SelectivePreloadingStrategyService } from '../../selective-preloading-strategy.service';
 
@@ -14,9 +16,11 @@ export class AdminDashboardComponent implements OnInit {
   sessionId: Observable<string>;
   token: Observable<string>;
   modules: string[];
+  heroes: Hero[] = [];
 
   constructor(
     private route: ActivatedRoute,
+    private heroService: HeroService,
     preloadStrategy: SelectivePreloadingStrategyService
   ) {
     this.modules = preloadStrategy.preloadedModules;
@@ -32,5 +36,13 @@ export class AdminDashboardComponent implements OnInit {
     this.token = this.route.fragment.pipe(
       map((fragment) => fragment || 'None')
     );
+
+    this.getHeroes();
+  }
+
+  getHeroes(): void {
+    this.heroService
+      .getHeroes()
+      .subscribe((heroes) => (this.heroes = heroes.slice(1, 5)));
   }
 }

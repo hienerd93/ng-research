@@ -8,8 +8,8 @@
   <button (click)="add(heroName.value); heroName.value = ''">add</button>
 </div>
 <ul class="heroes">
-  <li *ngFor="let hero of heroes" [class.selected]="selectedId === hero.id">
-    <a>
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/admin/detail/{{ hero.id }}">
       <span class="badge">{{ hero.id }}</span> {{ hero.name }}
     </a>
     <button class="delete" title="delete hero" (click)="delete(hero)">x</button>
